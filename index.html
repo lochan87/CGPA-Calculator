@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CGPA Calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+   <div class="container col-4" id="cgpa">
+      <h1 class="text-center" style="font-weight: bolder;">CGPA Calculator</h1>
+      <p class="text-justify">CGPA stands for Cumulative Grade Point Average. It is a measure of a student's academic performance. It is calculated by taking the average of the grade points obtained in all the semesters taken by the student.</p>
+      <p class="text-center" style="font-weight: bold;font-size: large;">Calculate your CGPA with ease!!</p>
+      <label>Select the number of semesters completed:</label>
+      <div class="input-group input-group-md mb-2 mt-2">
+        <select class="form-select" id="inputGroupSelect01">
+          <option value="0" selected>Select Sem</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+          <option value="4">Four</option>
+          <option value="5">Five</option>
+          <option value="6">Six</option>
+          <option value="7">Seven</option>
+          <option value="8">Eight</option>
+        </select>
+      </div>
+      <input class="submit" type="submit" style="font-size: large;" onclick="loadform()">
+    </div>
+    <!-- Hidden container -->
+    <div class="sem container col-4" id="sem">
+        <form id="s1" onsubmit="return false">
+            <p style="font-size: 17px; font-weight: bold;">Enter the total number of credits and SGPA obatined in each Sem and click on the "Calculate" button to view your CGPA.</p>
+            <label>Sem 1:</label>
+            <input type="number" min="0" max="30" id="s11c" name="s11c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s11pa" name="s11pa" placeholder="SGPA" required>
+            <input type="submit" value="Calculate" style="font-size: large;" onclick="getcgpa()">
+        </form>
+        <form id="s2" onsubmit="return false">
+            <p style="font-size: 17px; font-weight: bold;">Enter the total number of credits and obtained SGPA for each Sem and click the "Calculate" button to view your CGPA.</p>
+            <label>Sem 1:</label>
+            <input type="number" min="0" max="30" id="s21c" name="s21c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s21pa" name="s21pa" placeholder="SGPA" required>
+            <label>Sem 2:</label>
+            <input type="number" min="0" max="30" id="s22c" name="s2c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s22pa" name="s2pa" placeholder="SGPA" required>
+            <input type="submit" value="Calculate" style="font-size: large;" onclick="getcgpa()">
+        </form>
+        <form id="s3" onsubmit="return false">
+            <p style="font-size: 17px; font-weight: bold;">Enter the total number of credits and SGPA obatined in each Sem and click on the "Calculate" button to view your CGPA.</p>
+            <label>Sem 1:</label>
+            <input type="number" min="0" max="30" id="s31c" name="s31c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s31pa" name="s31pa" placeholder="SGPA" required>
+            <label>Sem 2:</label>
+            <input type="number" min="0" max="30" id="s32c" name="s32c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s32pa" name="s32pa" placeholder="SGPA" required>
+            <label>Sem 3:</label>
+            <input type="number" min="0" max="30" id="s33c" name="s33c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s33pa" name="s33pa" placeholder="SGPA" required>
+            <input type="submit" value="Calculate" style="font-size: large;" onclick="getcgpa()">
+        </form>
+        <form id="s4" onsubmit="return false">
+            <p style="font-size: 17px; font-weight: bold;">Enter the total number of credits and SGPA obatined in each Sem and click on the "Calculate" button to view your CGPA.</p>
+            <label>Sem 1:</label>
+            <input type="number" min="0" max="30" id="s41c" name="s41c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s41pa" name="s41pa" placeholder="SGPA" required>
+            <label>Sem 2:</label>
+            <input type="number" min="0" max="30" id="s42c" name="s42c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s42pa" name="s42pa" placeholder="SGPA" required>
+            <label>Sem 3:</label>
+            <input type="number" min="0" max="30" id="s43c" name="s43c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s43pa" name="s43pa" placeholder="SGPA" required>
+            <label>Sem 4:</label>
+            <input type="number" min="0" max="30" id="s44c" name="s44c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s44pa" name="s44pa" placeholder="SGPA" required>
+            <input type="submit" value="Calculate" style="font-size: large;" onclick="getcgpa()">
+        </form>
+        <form id="s5" onsubmit="return false">
+            <p style="font-size: 17px; font-weight: bold;">Enter the total number of credits and SGPA obatined in each Sem and click on the "Calculate" button to view your CGPA.</p>
+            <label>Sem 1:</label>
+            <input type="number" min="0" max="30" id="s51c" name="s51c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s51pa" name="s51pa" placeholder="SGPA" required>
+            <label>Sem 2:</label>
+            <input type="number" min="0" max="30" min="0" max="30" id="s52c" name="s52c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s52pa" name="s52pa" placeholder="SGPA" required>
+            <label>Sem 3:</label>
+            <input type="number" min="0" max="30" id="s53c" name="s53c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s53pa" name="s53pa" placeholder="SGPA" required>
+            <label>Sem 4:</label>
+            <input type="number" min="0" max="30" id="s54c" name="s54c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s54pa" name="s54pa" placeholder="SGPA" required>
+            <label>Sem 5:</label>
+            <input type="number" min="0" max="30" id="s55c" name="s55c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s55pa" name="s55pa" placeholder="SGPA" required>
+            <input type="submit" value="Calculate" style="font-size: large;" onclick="getcgpa()">
+        </form>
+        <form id="s6" onsubmit="return false">
+            <p style="font-size: 17px; font-weight: bold;">Enter the total number of credits and SGPA obatined in each Sem and click on the "Calculate" button to view your CGPA.</p>
+            <label>Sem 1:</label>
+            <input type="number" min="0" max="30" id="s61c" name="s61c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s61pa" name="s61pa" placeholder="SGPA" required>
+            <label>Sem 2:</label>
+            <input type="number" min="0" max="30" id="s62c" name="s62c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s62pa" name="s62pa" placeholder="SGPA" required>
+            <label>Sem 3:</label>
+            <input type="number" min="0" max="30" id="s63c" name="s63c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s63pa" name="s63pa" placeholder="SGPA" required>
+            <label>Sem 4:</label>
+            <input type="number" min="0" max="30" id="s64c" name="s64c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s64pa" name="s64pa" placeholder="SGPA" required>
+            <label>Sem 5:</label>
+            <input type="number" min="0" max="30" id="s65c" name="s65c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s65pa" name="s65pa" placeholder="SGPA" required>
+            <label>Sem 6:</label>
+            <input type="number" min="0" max="30" id="s66c" name="s66c" placeholder="No. of Credits" required> 
+            <input type="number" min="0.00" max="10" step="any" id="s66pa" name="s66pa" placeholder="SGPA" required>
+            <input type="submit" value="Calculate" style="font-size: large;" onclick="getcgpa()">
+        </form>
+        <form id="s7" onsubmit="return false">
+            <p style="font-size: 17px; font-weight: bold;">Enter the total number of credits and SGPA obatined in each Sem and click on the "Calculate" button to view your CGPA.</p>
+            <label>Sem 1:</label>
+            <input type="number" min="0" max="30" id="s71c" name="s71c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s71pa" name="s71pa" placeholder="SGPA" required>
+            <label>Sem 2:</label>
+            <input type="number" min="0" max="30" id="s72c" name="s72c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s72pa" name="s72pa" placeholder="SGPA" required>
+            <label>Sem 3:</label>
+            <input type="number" min="0" max="30" id="s73c" name="s73c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s73pa" name="s73pa" placeholder="SGPA" required>
+            <label>Sem 4:</label>
+            <input type="number" min="0" max="30" id="s74c" name="s74c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s74pa" name="s74pa" placeholder="SGPA" required>
+            <label>Sem 5:</label>
+            <input type="number" min="0" max="30" id="s75c" name="s75c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s75pa" name="s75pa" placeholder="SGPA" required>
+            <label>Sem 6:</label>
+            <input type="number" min="0" max="30" id="s76c" name="s76c" placeholder="No. of Credits" required> 
+            <input type="number" min="0.00" max="10" step="any" id="s76pa" name="s76pa" placeholder="SGPA" required>
+            <label>Sem 7:</label>
+            <input type="number" min="0" max="30" id="s77c" name="s77c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s77pa" name="s77pa" placeholder="SGPA" required>
+            <input type="submit" value="Calculate" style="font-size: large;" onclick="getcgpa(document.getElementById('s7').v)">
+        </form>
+        <form id="s8" onsubmit="return false">
+            <p style="font-size: 17px; font-weight: bold;">Enter the total number of credits and SGPA obatined in each Sem and click on the "Calculate" button to view your CGPA.</p>
+            <label>Sem 1:</label>
+            <input type="number" min="0" max="30" id="s81c" name="s81c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s81pa" name="s81pa" placeholder="SGPA" required>
+            <label>Sem 2:</label>
+            <input type="number" min="0" max="30" id="s82c" name="s82c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s82pa" name="s82pa" placeholder="SGPA" required>
+            <label>Sem 3:</label>
+            <input type="number" min="0" max="30" id="s83c" name="s83c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s83pa" name="s83pa" placeholder="SGPA" required>
+            <label>Sem 4:</label>
+            <input type="number" min="0" max="30" id="s84c" name="s84c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s84pa" name="s84pa" placeholder="SGPA" required>
+            <label>Sem 5:</label>
+            <input type="number" min="0" max="30" id="s85c" name="s85c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s85pa" name="s85pa" placeholder="SGPA" required>
+            <label>Sem 6:</label>
+            <input type="number" min="0" max="30" id="s86c" name="s86c" placeholder="No. of Credits" required> 
+            <input type="number" min="0.00" max="10" step="any" id="s86pa" name="s86pa" placeholder="SGPA" required>
+            <label>Sem 7:</label>
+            <input type="number" min="0" max="30" id="s87c" name="s87c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s87pa" name="s87pa" placeholder="SGPA" required>
+            <label>Sem 8:</label>
+            <input type="number" min="0" max="30" id="s88c" name="s88c" placeholder="No. of Credits" required>
+            <input type="number" min="0.00" max="10" step="any" id="s88pa" name="s88pa" placeholder="SGPA" required>
+            <input type="submit" value="Calculate" style="font-size: large;" onclick="getcgpa()">
+        </form>
+        <div id="result" style="text-align: center; margin-top: 20px; margin-bottom: 20px; font-size: 25px; font-weight: bold;"></div>
+    </div>
+    <!-- Custom Javascript -->
+    <script src="script.js"></script>
+    <!-- Bootstrap Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
